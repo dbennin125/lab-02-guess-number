@@ -10,6 +10,15 @@
 </head>
 
 <body>
+    <h1 class="headOne">Welcome to a guessing game!</h1>
+        <p>You will have 4 tries before it's over</p>
+        <input id="input" min="1" max="20"><br>Please guess from 1-20 in box above.</input>
+        <div>
+            <button id="button">Press Me!</button>
+        </div>
+        <p>Your guess was <span id="numberGuess"></span>.</p>
+        <p>Tries remaining: <span id="remaingTries"></span>.</p>
+        <p sytle.hidden id="correct-statement">You guessed the right number! It was:<span id="correctNumber"></span></p>
 
     <script type="module" src="app.js"></script>
 </body>
