@@ -1,7 +1,7 @@
 import compareNumbers from './compareNumber.js';//import compare function from other js script export 
 
 const myButton = document.getElementById('button'); //getting the button element
-const guessOut = document.getElementById('numberGuess');//the number the user guessed
+//const guessOut = document.getElementById('numberGuess');//the number the user guessed
 const userInput = document.getElementById('input'); //getting the input element
 
 function goNow() {
