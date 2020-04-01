@@ -15,10 +15,10 @@ myButton.addEventListener('click', goNow);
 
 function trybutton() {
     let countdown = 4;
-    const clickDecrease = countdown--;
+    const clickDecrease = countdown --;
     const tries = document.getElementById('remaingTries');
     tries.textContent = clickDecrease;
-    console.log(trybutton);
+    //console.log(trybutton); works
 }
 myButton.addEventListener('click', trybutton);
 
