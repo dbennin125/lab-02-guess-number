@@ -3,27 +3,28 @@ import compareNumbers from './compareNumber.js';//import compare function from o
 const myButton = document.getElementById('button'); //getting the button element
 //const guessOut = document.getElementById('numberGuess');//the number the user guessed
 const userInput = document.getElementById('input'); //getting the input element
+const answer = document.getElementById('correctNumber');//the correct number or time up 
+
+let countdown = 4 ;
+countdown--;
+
 
 function goNow() {
     const userInput = document.getElementById('input');
     const guessOutput = userInput.value;
     const guessOut = document.getElementById('numberGuess');
     guessOut.textContent = guessOutput;
-    //console.log(guessOutput);
+    //console.log(guessOutput); works
+    const clickDecrease = countdown;
+    const tries = document.getElementById('remaingTries');
+    countdown--;
+    tries.textContent = clickDecrease;
+    //console.log(clickDecrease); works
+    
 }
 myButton.addEventListener('click', goNow);
 
-function trybutton() {
-    let countdown = 4;
-    const clickDecrease = countdown --;
-    const tries = document.getElementById('remaingTries');
-    tries.textContent = clickDecrease;
-    //console.log(trybutton); works
-}
-myButton.addEventListener('click', trybutton);
 
-//const triesLeftOutput = document.getElementById('remaingTries');//the remaining tries left
-const answer = document.getElementById('correctNumber');
 
 //math function found to work
 function getRandomInt(min, max) {
@@ -35,12 +36,6 @@ function getRandomInt(min, max) {
 let actualNumber = getRandomInt(1, 20);
 //console.log(actualNumber);
 
-
-//making a function to decrease 4-0
-
-//let countdown = 4; 
-//countdown--;
-//countdown.textContent = triesLeftOutput;
     
     
 function playGame() {
@@ -48,8 +43,13 @@ function playGame() {
         //console.log(actualUserInput); works
     const result = compareNumbers(actualUserInput, actualNumber);
         //console.log(comparedNumbers); works
-        
-        
+    
+        //function timeOut() {
+           // if (Number(countdown) = 0) {
+           //     answer.textContent ='Game Over!' //I thought I had it..I couldn't figure this out. 
+           // }
+        //}
+
     function displayResult(result) {
         if (result === 0) {
             answer.textContent = 'Great Job!';
@@ -57,7 +57,8 @@ function playGame() {
             answer.textContent = 'Nope, too high';
         } else if (result === -1) {
             answer.textContent = 'Nope, too low';
-        }}
+        } 
+    }
             
     displayResult(result);
 }

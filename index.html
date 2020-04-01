@@ -9,16 +9,20 @@
     <title>Document</title>
 </head>
 
-<body>
+<body class="body">
     <h1 class="headOne">Welcome to a guessing game!</h1>
-        <p>You will have 4 tries before it's over</p>
-        <input id="input" min="1" max="20"><br>Please guess from 1-20 in box above.</input>
-        <div>
+        <div class="top" style="background-color: midnightblue;">
+            <p>You will have 4 tries before it's over</p>
+            <input class="2" id="input" min="1" max="20"><br>Please guess from 1-20 in box above.</input>
+            <br>
             <button id="button">Press Me!</button>
+            </b>
         </div>
-        <p>Your guess was: <span id="numberGuess"></span>.</p>
-        <p>Tries remaining: <span id="remaingTries"></span>.</p>
-        <p sytle.hidden id="correct-statement">Let's see..It was:<span id="correctNumber"></span></p>
+        <div class="bottom">
+            <p id="3">Your guess was: <span id="numberGuess"></span>.</p>
+            <p id="5">Tries remaining: <span id="remaingTries"></span>.</p>
+            <p id="4" sytle.hidden id="correct-statement">Let's see..It was:<span id="correctNumber"></span></p>
+        </div>
 
     <script type="module" src="app.js"></script>
 </body>
