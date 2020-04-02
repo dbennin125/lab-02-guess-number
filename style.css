@@ -1,0 +1,30 @@
+* {
+    box-sizing: border-box;
+}
+
+.body {
+    justify-content: center; 
+    background-color: dimgrey;
+} 
+.headOne {
+  border-style: dashed;
+  border-color: blue;
+  text-align: center;
+  height: 50px;
+  box-sizing: content-box;
+  background-color: crimson;
+  color: aquamarine;
+}
+.top {
+    color: rgb(24, 34, 34);
+    justify-self: center;
+    background-origin: padding-box;
+    text-align: center;
+    color: rgba(177, 201, 198, 0.582);
+     
+}
+ .bottom {
+     background-origin: padding-box;
+     background-color: darkslategrey;
+     color: goldenrod;
+     text-align: center;
