@@ -2,30 +2,11 @@ import compareNumbers from './compareNumber.js';//import compare function from o
 
 const myButton = document.getElementById('button'); //getting the button element
 //const guessOut = document.getElementById('numberGuess');//the number the user guessed
-const userInput = document.getElementById('input'); //getting the input element
+const usersNumber = document.getElementById('input'); //getting the input element
 const answer = document.getElementById('correctNumber');//the correct number or time up 
 
-let countdown = 4 ;
+let countdown = 4;
 countdown--;
-
-
-function goNow() {
-    const userInput = document.getElementById('input');
-    const guessOutput = userInput.value;
-    const guessOut = document.getElementById('numberGuess');
-    guessOut.textContent = guessOutput;
-    //console.log(guessOutput); works
-    const clickDecrease = countdown;
-    const tries = document.getElementById('remaingTries');
-    countdown--;
-    tries.textContent = clickDecrease;
-    //console.log(clickDecrease); works
-    
-}
-myButton.addEventListener('click', goNow);
-
-
-
 //math function found to work
 function getRandomInt(min, max) {
     min = Math.ceil(min);
@@ -34,34 +15,43 @@ function getRandomInt(min, max) {
 }
 
 let actualNumber = getRandomInt(1, 20);
-//console.log(actualNumber);
+//console.log(actualNumber); this works
 
     
     
 function playGame() {
-    const actualUserInput = Number(userInput.value);
+    const actualUserInput = Number(usersNumber.value);
         //console.log(actualUserInput); works
     const result = compareNumbers(actualUserInput, actualNumber);
         //console.log(comparedNumbers); works
-    
-        //function timeOut() {
-           // if (Number(countdown) = 0) {
-           //     answer.textContent ='Game Over!' //I thought I had it..I couldn't figure this out. 
-           // }
-        //}
 
-    function displayResult(result) {
-        if (result === 0) {
+    function displayResult(compNum) {
+        if (compNum === 0) {
             answer.textContent = 'Great Job!';
-        } else if (result === 1) {
+        } else if (compNum === 1) {
             answer.textContent = 'Nope, too high';
-        } else if (result === -1) {
+        } else if (compNum === -1) {
             answer.textContent = 'Nope, too low';
         } 
+        //function endGame(countdown) {
+            //if (countdown === 0) {
+                //return alert('You have lost.');
+            //}       
+        //}
+        const usersNumber = document.getElementById('input');
+        const guessOutput = usersNumber.value;
+        const guessOut = document.getElementById('numberGuess');
+        guessOut.textContent = guessOutput;
+    //console.log(guessOutput); works
+        const clickDecrease = countdown;
+        const tries = document.getElementById('remaingTries');
+        countdown--;
+        tries.textContent = clickDecrease;
+    //console.log(clickDecrease); works    
+       // endGame(countdown);
     }
-            
     displayResult(result);
+    
 }
-              
 
 myButton.addEventListener('click', playGame);
